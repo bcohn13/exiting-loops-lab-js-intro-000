@@ -26,13 +26,17 @@ function keepGoing(array, changeValue, skipValue) {
 
 function findBy(array, findFn) {
 
+   var count=0
    for (let i=0; i<array.length; i++) {
      if (findFn(array[i])) {
        return array[i]
      }
      else {
-       return null
+       count+=1
+       //continue
      }
    }
-
+   if (count===array.length) {
+     return null
+   }
  }
